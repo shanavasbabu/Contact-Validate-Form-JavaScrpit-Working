@@ -1,0 +1,62 @@
+$('#btnContact').on('click',function() {
+
+ 	var name1 = document.forms["Contact-Us"]["form-field-contact_us_name"];			 
+	var email1 = document.forms["Contact-Us"]["form-field-Contact_Us_email"]; 
+	var phone1 = document.forms["Contact-Us"]["form-field-Contact_Us_Phone"]; 
+	var message= document.forms["Contact-Us"]["form-field-Contact_Us_message"]; 
+	var phoneLength = $('#form-field-Contact_Us_Phone').val().length;
+  
+  
+	if (name1.value == "")								 
+	{ 
+		window.alert("Please enter your name."); 
+		name1.focus(); 
+		return false; 
+	} 
+
+	
+	if (email1.value == "")								 
+	{ 
+		window.alert("e-mail address is required field."); 
+		email1.focus(); 
+		return false; 
+	} 
+
+	if (email1.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email1.focus(); 
+		return false; 
+	} 
+
+	if (email1.value.indexOf(".", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email1.focus(); 
+		return false; 
+	} 
+  
+  if(phone1.value == "") {
+    window.alert("Phone number is required filed.");
+    phone1.focus();
+    return false;
+    }
+	
+  	if (phoneLength >10)
+	{
+		
+	alert("Phone is greater than 10");
+    phoneLength.focus();
+    return false;
+				
+	}
+  
+	if (message.value=="")
+	{
+		alert("Enter Your Message")
+		message.focus();
+		return false;
+	}
+
+	return true; 
+});
